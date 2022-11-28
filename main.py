@@ -7,6 +7,8 @@ from app.views import home
 
 app = Flask(__name__)
 app.register_blueprint(home)
+if True:
+    pass
 
 app.config["MONGO_URI"] = "mongodb://127.0.0.1:27017/hospital_db"
 app.config["EXPLAIN_TEMPLATE_LOADING"] = True
