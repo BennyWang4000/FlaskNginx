@@ -1,21 +1,20 @@
 {% extends "base.html" %}
-
+ 
 {% block pagename %}
-Home Page
 {% endblock %}
-
+ 
 {% block content %}
-Check following pages
-<ol>
-    <li><a href="/courses">Courses</a></li>
-    <!—list of links <li><a href="/ebooks">Ebooks</a></li>
+
+    Check following pages
+    <ol>
+        <li><a href="/courses">Courses</a></li><!—list of links
+        <li><a href="/ebooks">Ebooks</a></li>
         <li><a href="/tutorials">Tutorials</a></li>
-
-</ol>
-
+        <li>itravel | itravel.com</li>
+    </ol>
+ 
 <p>
     Check <a href="/home/about">About Us</a>
 </p>
-
-<img src="{{url_for('.static', filename='img/monkagun.png')}}">
+ 
 {% endblock %}
