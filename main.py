@@ -6,7 +6,7 @@ from app.views import home
 
 
 app = Flask(__name__)
-app.register_blueprint(home)
+app.register_blueprint(home, url_prefix='/app')
 
 app.config["MONGO_URI"] = "mongodb://127.0.0.1:27017/hospital_db"
 app.config["EXPLAIN_TEMPLATE_LOADING"] = True
@@ -36,4 +36,5 @@ def get_appointment():
 
 
 if __name__ == "__main__":
+    print(app.url_map)
     app.run(host="127.0.0.1", port='8001')
