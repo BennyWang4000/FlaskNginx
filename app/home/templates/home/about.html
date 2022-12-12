@@ -1,30 +1,90 @@
-{% extends "base.html" %}
- 
-{% block pagename %}
-About Page
-{% endblock %}
- 
+<style>
+    .backround {
+        margin-top: -580px;
+        margin-left: -100px;
+        width: 2012px;
+        height: 39px;
+        /* position: relative; */
+        /* overflow: hidden; */
+        background-color: black;
+        display: block;
+    }
+
+    .inline {
+        display: inline;
+    }
+
+    .imgg{
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+    
+</style>
+<h1 class="backround">
+    <div class="x" style="margin: 570px; padding: -1px;   ">
+        <span class="x" style="display: inline-block ; margin-top: 15px;">
+            <font size="2px" color="white" face="Times New Roman" style="white-space:pre;">身分入口:: </font>
+        </span>
+        <span class=" x" style="display: inline-block">
+            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;">學生&ensp;|&ensp;醫師&ensp;|&ensp;員工&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font>
+        </span>
+        <span class=" x" style="display: inline-block ;">
+            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;" >
+                |&ensp;MyPortal&ensp;|&ensp;疫苗預約&ensp;|&ensp;防疫專區&ensp;|&ensp;English&ensp;|</font>
+        </span> 
+
+        
+        
+        <span>
+            
+                <img class="imgg" src="{{ url_for('.static', filename='img/LOGO.png') }}" alt="LOLewss" width="300" height="200 " >
+            
+        </span>
+         
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('home.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img1.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            <!-- 關於中科 -->
+        </span>
+        <td>&emsp;</td>
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img2.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            <!-- 網路預約 -->
+        </span>
+        <td>&emsp;</td>
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('home.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img3.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            <!-- 掛號查詢 -->
+        </span>
+        
+        <hr  style="display: block;margin-top: -35px;border: 4px solid rgb(230, 230, 230);">
+
+
+        <!-- <span style="position:relative;top: 25px;left: 30px;"><img class="imgg" src="{{ url_for('.static', filename='img/img4.png') }}" alt="LOLewss" width="872"  ></span> -->
+
+        
+        <table border="0" width="872" align="center">
+            <tr>
+                <!-- <td align="center">123</td> -->
+                <!-- <td align="center">456</td> -->
+                <td align="left"  colspan="3" ><h2 style="margin: 10px;">依科別掛號</h2></td>
+            </tr>
+            <tr>
+                <td align="center"></td>
+                <td align="center" ><h3><a href="home/about.html">一般內科</h3></td>
+                <td align="center"></td>
+            </tr>
+            
+        </table>
+    </div>
+        
+</h1>
+
+{% block pagename %} {% endblock %}
 {% block content %}
- 
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam turpis
-    tellus, interdum sed diam cursus, sollicitudin luctus libero. Vestibulum
-    tincidunt ex vel consectetur aliquet. Donec odio sapien, gravida non
-    laoreet sed, rhoncus eu dolor. Cras tincidunt purus ac justo pharetra,
-    accumsan faucibus justo interdum. Aliquam commodo justo at urna
-    sollicitudin pretium. Vivamus vitae diam luctus, faucibus nibh ut, faucibus
-    tortor. Vestibulum varius ipsum nec mi lobortis dignissim. Aliquam
-    dignissim placerat purus, eu lobortis elit interdum et. Donec velit sem,
-    tristique in lacus mollis, ultricies malesuada felis. Praesent nec urna
-    eros.
-</p>
- 
-<p>
-    In hac habitasse platea dictumst. Maecenas egestas sit amet neque sed
-    pretium. Curabitur nec ex vitae tortor luctus vulputate sit amet sed orci.
-    Nam vehicula augue sem, sit amet aliquet ipsum aliquet vel. Curabitur
-    varius odio eget nisl gravida malesuada. Phasellus neque neque, scelerisque
-    vel eleifend ac, ullamcorper nec lacus. Aliquam auctor nibh lacus, at
-    tristique quam sodales nec.
-</p>
 {% endblock %}
