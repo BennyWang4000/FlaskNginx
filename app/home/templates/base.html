@@ -6,35 +6,70 @@
         height: 39px;
         /* position: relative; */
         /* overflow: hidden; */
-        background-color: black
+        background-color: black;
+        display: block;
     }
 
     .inline {
         display: inline;
     }
+
+    .imgg{
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+    
 </style>
 <h1 class="backround">
-    <div class="x" style="margin: 570px; padding: -1px;  ; ">
-        <span class="x" style="display: inline-block">
+    <div class="x" style="margin: 570px; padding: -1px;   ">
+        <span class="x" style="display: inline-block ; margin-top: 15px;">
             <font size="2px" color="white" face="Times New Roman" style="white-space:pre;">身分入口:: </font>
         </span>
         <span class=" x" style="display: inline-block">
-            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;">
-                學生&ensp;|&ensp;醫師&ensp;|&ensp;員工
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            </font>
+            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;">學生&ensp;|&ensp;醫師&ensp;|&ensp;員工&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font>
         </span>
-        <span class=" x" style="display: inline-block">
-            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;">|&ensp;My
-                Portal&ensp;|&ensp;疫苗預約&ensp;|&ensp;防疫專區&ensp;|&ensp;English&ensp;|</font>
+        <span class=" x" style="display: inline-block ;">
+            <font size="2 px" color="white" face="Times New Roman" style="white-space:pre;" >
+                |&ensp;MyPortal&ensp;|&ensp;疫苗預約&ensp;|&ensp;防疫專區&ensp;|&ensp;English&ensp;|</font>
+        </span> 
+
+        
+        
+        <span>
+            
+            <img class="imgg" src="{{ url_for('.static', filename='img/LOGO.png') }}" alt="LOLewss" width="300" height="200 " >
+            
         </span>
-        <tr>
-            <td><img src="{{ url_for('.static', filename='img/LOGO.png') }}" alt="LOLewss"></td>
-        </tr>
+         
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img1.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            
+        </span>
+        <td>&emsp;</td>
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img2.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            
+        </span>
+        <td>&emsp;</td>
+        <span  style="display:inline-block; margin:-10px;margin-left: 10px;position: relative;top: -55px; ">
+            <a href="{{ url_for('.about') }}">
+                <img class="imgg" src="{{ url_for('.static', filename='img/img3.png') }}" alt="LOLewss" width="83" height="16 " >
+            </a>
+            
+        </span>
+        
+        <hr  style="display: block;margin-top: -35px;border: 4px solid rgb(230, 230, 230);">
+        <span style="position:relative;top: 25px;left: 30px;"><img class="imgg" src="{{ url_for('.static', filename='img/img4.png') }}" alt="LOLewss" width="872"  ></span>
     </div>
+        
 </h1>
 
 
+ 
 {% block pagename %} {% endblock %}
 {% block content %}
 {% endblock %}
