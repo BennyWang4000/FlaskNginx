@@ -24,7 +24,7 @@ class HospAccessor:
     def insert_reg(self, p_id, p_date):
         return self.db.query_write('')
 
-    def cancel_reg(self, cli_id, p_id):
+    def delete_reg(self, cli_id, p_id):
         return self.db.query_write('', None).fetchall()
 
     # def select_body_where(self, body_tup, symp):
