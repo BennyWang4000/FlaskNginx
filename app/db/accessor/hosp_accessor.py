@@ -12,13 +12,13 @@ class HospAccessor:
         '''
         return self.db.query_read('SELECT * FROM `body`', None).fetchall()
 
-    def select_doc(self):
+    def select_doc(self, dep_id):
         return self.db.query_read('SELECT * FROM `body`', None).fetchall()
 
-    def select_cli(self):
+    def select_cli(self, doc_id):
         return self.db.query_read('SELECT * FROM `body`', None).fetchall()
 
-    def select_reg(self):
+    def select_reg(self, p_id, p_date):
         return self.db.query_read('SELECT * FROM `body`', None).fetchall()
 
     def insert_reg(self, p_id, p_date):
