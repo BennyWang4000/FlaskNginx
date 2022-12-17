@@ -1,12 +1,12 @@
-$( document ).ready(function() {
-    
+$(document).ready(function () {
+
     const dep_table = document.getElementById('dep_table');
     fetch('/select_dep', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        },  
+        },
     })
         .then(response => response.json())
         .then(function (response_json) {
