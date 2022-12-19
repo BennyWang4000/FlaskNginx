@@ -10,7 +10,7 @@ class HospAccessor:
         '''
 
         '''
-        return self.db.query_read('SELECT * FROM `body`', None).fetchall()
+        return self.db.query_read('select * from hos_db.department', None).fetchall()
 
     def select_doc(self):
         return self.db.query_read('SELECT * FROM `body`', None).fetchall()

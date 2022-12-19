@@ -1,0 +1,19 @@
+.backround {
+    margin-top: -580px;
+    margin-left: -100px;
+    width: 2012px;
+    height: 39px;
+    /* position: relative; */
+    /* overflow: hidden; */
+    background-color: black;
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.imgg {
+    margin-top: -30px;
+    margin-left: -30px;
+}
