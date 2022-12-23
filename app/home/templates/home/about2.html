@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 style="margin: 10px;">{{ dep_name }} 醫師</h3>
+<table id="doc_table" border="0" width="872" align="center">
+
+</table>
+{% endblock %}
+{% block body_script %}
+<script src="{{ url_for('home.static', filename='js/about2.js') }}" , dep_id={{ dep_id }}></script>
+{% endblock %}
