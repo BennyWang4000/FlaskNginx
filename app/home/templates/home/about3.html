@@ -1,123 +1,90 @@
 {% extends "base.html" %}
 {% block content %}
-<table border="0" width="872" align="center">
-    <tr>
-        <!-- <td align="center">123</td> -->
-        <!-- <td align="center">456</td> -->
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;"></h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期一</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期二</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期三</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期四</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期五</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期六</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期日</h6>
-        </td>
 
-    </tr>
-    <tr>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">早上</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期一</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期二</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期三</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期四</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期五</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期六</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期日</h6>
-        </td>
-    </tr>
-    <tr>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">中午</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期一</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期二</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期三</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;"><input type="radio" name="a" />111/12/15</br><input type="radio"
-                    name="a" />111/12/22<br /></h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期五</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期六</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期日</h6>
-        </td>
-    </tr>
-    <tr>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">晚上</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期一</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期二</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期三</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;"><input type="radio" name="a" />111/12/15</br><input type="radio"
-                    name="a" />111/12/22<br /></h6>
-            </h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期五</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期六</h6>
-        </td>
-        <td align="center" colspan="3">
-            <h6 style="margin: 10px;">星期日</h6>
-        </td>
-    </tr>
-
-</table>
-<h5>請輸入身分證字號及生日</h5>
-<h6>身分證字號：<input></input>&emsp;生日：
-    <input type="date"> &emsp;
-    <input type="submit" value="提交">
-
-    {% endblock %}
-
-    <!-- 選時間 -->
+<h3 style="margin: 10px;">{{doc_name}} 醫師</h3>
+<form>
+    <table border="1" width="872" align="center">
+        <thead>
+            <td align="center">
+                <h6 style="margin: 10px;">time</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期一</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期二</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期三</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期四</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期五</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期六</h6>
+            </td>
+            <td align="center">
+                <h6 style="margin: 10px;">星期日</h6>
+            </td>
+        </thead>
+        <tbody>
+            <tr id="dep_doc_morning">
+                <th align="center">
+                    <h6 style="margin: 10px;">早上</br>8:30</br>~</br>12:00</h6>
+                </th>
+                <td align="center" id="mon_morning"></td>
+                <td align="center" id="tue_morning"></td>
+                <td align="center" id="wed_morning"></td>
+                <td align="center" id="thr_morning"></td>
+                <td align="center" id="fri_morning"></td>
+                <td align="center" id="sat_morning"></td>
+                <td align="center" id="sun_morning"></td>
+            </tr>
+            <tr id="dep_doc_afternoon">
+                <th align="center">
+                    <h6 style="margin: 10px;">下午</br>13:30</br>~</br>17:00</h6>
+                </th>
+                <td align="center" id="mon_afternoon"></td>
+                <td align="center" id="tue_afternoon"></td>
+                <td align="center" id="wed_afternoon"></td>
+                <td align="center" id="thr_afternoon"></td>
+                <td align="center" id="fri_afternoon"></td>
+                <td align="center" id="sat_afternoon"></td>
+                <td align="center" id="sun_afternoon"></td>
+            </tr>
+            <tr id="dep_doc_night">
+                <th align="center">
+                    <h6 style="margin: 10px;">晚上</br>18:00</br>~</br>21:00</h6>
+                </th>
+                <td align="center" id="mon_night"></td>
+                <td align="center" id="tue_night"></td>
+                <td align="center" id="wed_night"></td>
+                <td align="center" id="thr_night"></td>
+                <td align="center" id="fri_night"></td>
+                <td align="center" id="sat_night"></td>
+                <td align="center" id="sun_night"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" width="872" align="center">
+        <tr>
+            <td align="left">
+                <h5 style="margin: 10px;">請輸入病歷號及生日</h5>
+                <h6 style="margin: 10px;">
+                    病歷號：
+                    <input type="text" id="app_id"></input>
+                    生日：
+                    <input type="date" id="app_date"> &emsp;
+                    <button type="button" id="app_submit">掛號</button>
+                </h6>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
+{% block body_script %}
+<script src="{{ url_for('home.static', filename='js/about3.js') }}" , doc_id={{ doc_id }}></script>
+{% endblock %}

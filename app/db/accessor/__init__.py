@@ -1,0 +1,1 @@
+from . import hosp_accessor

@@ -25,23 +25,29 @@ class DbHelper:
                                                password=password,
                                                db=database,
                                                charset='utf8',
-                                               cursorclass=pymysql.cursors.DictCursor)
+                                               cursorclass=pymysql.cursors.DictCursor,)
+
         self.connection_write = pymysql.connect(host=host,
                                                 user=user,
                                                 password=password,
                                                 db=database,
                                                 charset='utf8',
-                                                cursorclass=pymysql.cursors.DictCursor)
-        self.cursor_read = self.connection_read.cursor()
-        self.cursor_write = self.connection_write.cursor()
+                                                cursorclass=pymysql.cursors.DictCursor,)
+                                                
+        # self.cursor_read = self.connection_read.cursor()
+        # self.cursor_write = self.connection_write.cursor()
 
     def query_read(self, query, params=None):
-        self.cursor_read.execute(query, params)
-        return self.cursor
+        with self.connection_read.cursor() as cursor:
+            cursor.execute(query, params)
+            return cursor
 
     def query_write(self, query, params=None):
-        self.cursor_write.execute(query, params)
-        return self.cursor_write
+        with self.connection_write.cursor() as cursor:
+            cursor.execute(query, params)
+            self.connection_write.commit()
+            self.connection_read.commit()
+            return cursor
 
     def close(self):
         self.connection_read.close()

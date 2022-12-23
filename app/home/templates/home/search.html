@@ -1,21 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<table border="0" width="872" align="center">
-    <tr>
-        <!-- <td align="center">123</td> -->
-        <!-- <td align="center">456</td> -->
-        <td align="left" colspan="3">
-            <h1 style="margin: 10px;">掛號查詢或取消掛號</h1>
+<h3 style="margin: 10px;">掛號查詢或取消掛號</h3>
+<form>
+    <table border="0" width="872" align="center">
+        <tr>
+            <td align="left">
+                <h5 style="margin: 10px;">請輸入病歷號及生日</h5>
+                <h6 style="margin: 10px;">
+                    病歷號：
+                    <input type="text" id="search_id"></input>
+                    生日：
+                    <input type="date" id="search_date"> &emsp;
+                    <button type="button" id="search_submit">查詢</button>
+                </h6>
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<table border="1" width="872" align="center">
+    <thead>
+        <td align="center">
+            日期
         </td>
-    </tr>
-    <tr>
-        <td align="left">
-            <h3 style="margin: 10px;">請輸入身分證字號及生日</h3>
-            <h3 style="margin: 10px;">身分證字號：<input></input>&emsp;生日：
-                <input type="date"> &emsp;
-                <input type="submit" value="提交">
+        <td align="center">
+            星期
         </td>
-    </tr>
+        <td align="center">
+            時間
+        </td>
+        <td align="center">
+            科別
+        </td>
+        <td align="center">
+            醫師
+        </td>
+        <td align="center">
+            取消
+        </td>
+    </thead>
+    <tbody id="app_tbody">
 
+    </tbody>
 </table>
+{% endblock %}
+{% block body_script %}
+<script src="{{ url_for('home.static', filename='js/search.js') }}" , doc_id={{ doc_id }}></script>
 {% endblock %}
