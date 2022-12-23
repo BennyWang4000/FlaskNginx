@@ -1,20 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<table border="0" width="872" align="center">
-    <tr>
-        <!-- <td align="center">123</td> -->
-        <!-- <td align="center">456</td> -->
-        <td align="left" colspan="3">
-            <h2 style="margin: 10px;">依科別掛號</h2>
-        </td>
-    </tr>
-    <tr>
-        <td align="center"></td>
-        <td align="center">
-            <h3><a href="about2">一般內科</h3>
-        </td>
-        <td align="center"></td>
-    </tr>
+
+<h3 style="margin: 10px;">依科別掛號</h3>
+<table id="dep_table" border="0" width="872" align="center">
 
 </table>
+{% endblock %}
+{% block body_script %}
+<script src="{{ url_for('home.static', filename='js/about.js') }}"></script>
 {% endblock %}

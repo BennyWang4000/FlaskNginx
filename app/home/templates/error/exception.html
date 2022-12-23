@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<center>
+    <h2>
+        something went wrong...
+    </h2>
+    <h5>
+        go back to <a href="{{ url_for('home.index') }}">home page</a>.
+    </h5>
+    <h6>
+        {{err}}
+    </h6>
+</center>
+
+{% endblock %}
