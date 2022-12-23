@@ -1,6 +1,6 @@
-const reg_id = document.getElementById('reg_id')
-const reg_date = document.getElementById('reg_date')
-const reg_submit = document.getElementById('reg_submit')
+const app_id = document.getElementById('app_id')
+const app_date = document.getElementById('app_date')
+const app_submit = document.getElementById('app_submit')
 
 const mon_morning = document.getElementById('mon_morning')
 const tue_morning = document.getElementById('tue_morning')
@@ -83,15 +83,15 @@ fetch('/select_cli', {
         });
     });
 
-function insert_reg() {
-    fetch('/insert_reg', {
+function insert_app() {
+    fetch('/insert_app', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            'med_id': reg_id.value,
+            'med_id': app_id.value,
             'cli_id': document.querySelector('input[name="cli"]:checked').value,
         }),
     })
@@ -105,5 +105,4 @@ function insert_reg() {
             window.location.href = "http://140.83.85.111";
         })
 };
-reg_submit.onclick = function () { insert_reg() };
-// reg_submit.addEventListener('input', insert_reg);
+app_submit.onclick = function () { insert_app() };

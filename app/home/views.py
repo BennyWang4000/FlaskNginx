@@ -29,6 +29,6 @@ def about3():
 def search():
     return render_template("home/search.html")
 
-@home.app_errorhandler(Exception)
-def handle_exception(err):
-    return render_template('error/exception.html', err=err)
+# @home.app_errorhandler(Exception)
+# def handle_exception(err):
+#     return render_template('error/exception.html', err=err)

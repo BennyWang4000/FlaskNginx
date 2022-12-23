@@ -2,15 +2,13 @@ from flask import render_template, Blueprint, make_response, jsonify, request
 import sys
 from datetime import date, datetime
 from db.accessor import hosp_accessor
+import config as cfg
 import json
 
 api = Blueprint("api", __name__,)
-# print(dir(db))
-# print(dir(db.accessor))
 
-hosp = hosp_accessor.HospAccessor(host='localhost', user='root',
-                    database='hos_db', password='050610AIoT')
-
+hosp = hosp_accessor.HospAccessor(host=cfg.host, user=cfg.user,
+                    database=cfg.database, password=cfg.password)
 
 
 @api.route('/select_dep', methods=['POST'])
@@ -35,8 +33,6 @@ def select_cli():
     request_data = request.get_json()
     doc_id= request_data['doc_id']
     result = hosp.select_cli(doc_id)
-    # doc_id, cli_day, cli_time = request_data['doc_id'], request_data['cli_day'], request_data['cli_time']
-    # result = hosp.select_cli(doc_id, cli_day, cli_time)
     response = make_response(json.dumps({"content": result}, default=str), 200)
     response.headers["Content-Type"] = "application/json"
     return response
@@ -62,6 +58,16 @@ def insert_app():
     return response
 
 
+@api.route('/complete_app', methods=['POST'])
+def complete_app():
+    request_data = request.get_json()
+    med_id, cli_id = request_data['med_id'], request_data['cli_id']
+    result = hosp.complete_app(med_id, cli_id)
+    response = make_response(jsonify({}), 200)
+    response.headers["Content-Type"] = "application/json"
+    return response
+
+
 @api.route('/cancel_app', methods=['POST'])
 def cancel_app():
     request_data = request.get_json()
@@ -71,11 +77,3 @@ def cancel_app():
     response.headers["Content-Type"] = "application/json"
     return response
 
-@api.route('/update_app', methods=['POST'])
-def update_app():
-    request_data = request.get_json()
-    med_id, cli_id = request_data['med_id'], request_data['cli_id']
-    result = hosp.update_app(med_id, cli_id)
-    response = make_response(jsonify({}), 200)
-    response.headers["Content-Type"] = "application/json"
-    return response
