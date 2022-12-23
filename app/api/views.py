@@ -10,7 +10,6 @@ api = Blueprint("api", __name__,)
 hosp = hosp_accessor.HospAccessor(host=cfg.host, user=cfg.user,
                     database=cfg.database, password=cfg.password)
 
-
 @api.route('/select_dep', methods=['POST'])
 def select_dep():
     result = hosp.select_dep()
@@ -27,7 +26,6 @@ def select_doc():
     response.headers["Content-Type"] = "application/json"
     return response
 
-
 @api.route('/select_cli', methods=['POST'])
 def select_cli():
     request_data = request.get_json()
@@ -36,7 +34,6 @@ def select_cli():
     response = make_response(json.dumps({"content": result}, default=str), 200)
     response.headers["Content-Type"] = "application/json"
     return response
-
 
 @api.route('/select_app', methods=['POST'])
 def select_app():
@@ -47,7 +44,6 @@ def select_app():
     response.headers["Content-Type"] = "application/json"
     return response
 
-
 @api.route('/insert_app', methods=['POST'])
 def insert_app():
     request_data = request.get_json()
@@ -57,7 +53,6 @@ def insert_app():
     response.headers["Content-Type"] = "application/json"
     return response
 
-
 @api.route('/complete_app', methods=['POST'])
 def complete_app():
     request_data = request.get_json()
@@ -66,7 +61,6 @@ def complete_app():
     response = make_response(jsonify({}), 200)
     response.headers["Content-Type"] = "application/json"
     return response
-
 
 @api.route('/cancel_app', methods=['POST'])
 def cancel_app():
